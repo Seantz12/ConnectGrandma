@@ -32,7 +32,7 @@ wsServer.on('request', function(request) {
             users[userID] = data;    
             json.data = { users };
         } else {
-
+            
         }
     }
   });
