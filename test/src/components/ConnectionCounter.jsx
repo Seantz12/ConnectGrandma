@@ -9,28 +9,7 @@ class ConnectionCounter extends React.Component {
     }
 
     componentDidMount() {
-        this.props.pubnub.subscribe({
-            channels: ['channell'],
-            withPresence: true
-        });
-
-        this.pubnub.getMessage('channel1', (msg) => {
-            console.log(msg);
-        });
- 
-        this.pubnub.getStatus((st) => {
-            this.pubnub.publish({
-                message: 'hello world from react',
-                channel: 'channel1'
-            });
-        });
         setInterval(this.checkConnectionUpdate, 100);
-    }
-
-    componentWillUnmount() {
-        this.pubnub.unsubscribe({
-            channels: ['channel1']
-        });
     }
 
     checkConnectionUpdate() {
@@ -38,7 +17,6 @@ class ConnectionCounter extends React.Component {
     }
 
     render() {
-        const messages = this.pubnub.getMessage('channell');
         return (
             <div>
                 <p>{this.state.numberOfConnections}</p>
