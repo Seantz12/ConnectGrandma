@@ -12,6 +12,13 @@ const wsServer = new webSocketServer({
 const clients = {};
 const users = {};
 
+const sendMessage = (json) => {
+  // We are sending the current data to all connected clients
+  Object.keys(clients).map((client) => {
+    clients[client].sendUTF(json);
+  });
+}
+
 // This code generates unique userid for everyuser.
 const getUniqueID = () => {
   const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
@@ -32,9 +39,18 @@ wsServer.on('request', function(request) {
             users[userID] = data;    
             json.data = { users };
         } else {
-            
+            console.log('huh');
         }
+        sendMessage(JSON.stringify(json));
     }
+  });
+  connection.on('close', function(connection) {
+    console.log('close');
+    const json = { type: "userevent" };
+    json.data = { users }
+    delete clients[userID];
+    delete users[userID];
+    sendMessage(JSON.stringify(json));
   });
   console.log('connected: ' + userID + ' in ' + Object.getOwnPropertyNames(clients))
 });
