@@ -4,7 +4,6 @@ import PlayButton from './components/PlayButton.jsx'
 import PubNubReact from 'pubnub-react'
 import './App.css';
 
-
 class App extends React.Component {
 
   constructor(props) {
