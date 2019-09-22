@@ -1,4 +1,5 @@
 import React from 'react';
+import Play from '../play.svg';
 
 class PlayButton extends React.Component {
     constructor(props) {
@@ -9,9 +10,7 @@ class PlayButton extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.props.PlayYoutube}>
-                    PLAY
-                </button>
+                <img src={Play} height='200px' width='200px' onClick={this.props.PlayYoutube}/>
             </div>
         );
     }
