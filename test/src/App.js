@@ -14,7 +14,8 @@ class App extends React.Component {
       numOfConnections: 0, 
       playing: false, 
       rectHidden: false,
-      uuid: uuidv1()
+      uuid: uuidv1(),
+      playHidden: false,
     }
     this.pubnub = new PubNubReact({
       publishKey: 'pub-c-3f401cd6-e037-44fa-8f6e-d414446b10e6',
@@ -88,16 +89,20 @@ class App extends React.Component {
         <svg hidden={this.state.rectHidden} onClick={this.imageHide} width="1920" height="1080">
           <rect width="1920" height="3000" />
         </svg>
-        <ReactPlayer 
-          id='youtube-player'
-          playing={this.state.playing}
-          height={500}
-          width={1000}
-          url='https://www.youtube.com/watch?v=WJq4jWSQNd8/'
-          controls={false}
-        />
-        <PlayButton PlayYoutube={this.PlayYoutube}/>
-        <UserButton/>
+        <div className="container" stype={{position:'relative'}}>
+          <ReactPlayer 
+            className="Video"
+            id='youtube-player'
+            height='1500'
+            width='2000'
+            left='0%'
+            playing={this.state.playing}
+            url='https://www.youtube.com/watch?v=WJq4jWSQNd8/'
+            controls={false}
+          />
+          <PlayButton className="PlayButton"  PlayYoutube={this.PlayYoutube}/>
+          <UserButton className="UserButton"/>
+        </div>
       </div>
     );
   }

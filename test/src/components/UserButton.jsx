@@ -21,7 +21,8 @@ class UserButton extends React.Component {
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation">Menu item 1</li>
+                    <li role="presentation">Me</li>
+                    <li role="presentation">Grandma</li>
                 </ul>
                 </div>
             </div>
