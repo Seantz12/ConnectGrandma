@@ -30,9 +30,9 @@ class App extends React.Component {
 
   playVideo() {
     console.log('test')
-    this.setState((state) => {
-      state.playing = true;
-      state.imageHide = true;
+    this.setState({
+      playing: true,
+      imageHide: true
     });
   }
 
