@@ -1,6 +1,7 @@
 import React from 'react';
 import ConnectionCounter from './components/ConnectionCounter.jsx'
 import PlayButton from './components/PlayButton.jsx'
+import UserButton from './components/UserButton.jsx'
 import PubNubReact from 'pubnub-react'
 import './App.css';
 
@@ -34,6 +35,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <PlayButton PlayYoutube={this.PlayYoutube}/>
+        <UserButton/>
       </div>
     );
   }
