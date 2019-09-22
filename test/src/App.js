@@ -19,6 +19,7 @@ class App extends React.Component {
   }
 
   playVideo() {
+    console.log('test')
     this.setState((state) => state.playing = true);
   }
 
@@ -36,8 +37,8 @@ class App extends React.Component {
         }
       }
     });
-    this.pubnub.addListener({ message: function (message) {
-      // this.playVideo();
+    this.pubnub.addListener({ message: (message) => {
+      this.playVideo();
       console.log(message);
       console.log(message.message);
     }});
