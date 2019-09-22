@@ -9,7 +9,7 @@ class UserButton extends React.Component {
 
     render() {
         return (
-            <div style={{position: 'absolute', bottom: '30px', right: '-975px'}} >
+            <div style={{position: 'absolute', bottom: '30px', right: '-93vh'}} >
                 {/* <ButtonToolbar>
                     <DropdownButton drop='up' variant='secondary' title='SEE CURRENT USERS' id='currentUsers' key='up'>
                         <Dropdown.Item eventKey="1">Action</Dropdown.Item>
