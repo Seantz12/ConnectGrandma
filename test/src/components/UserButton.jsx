@@ -1,6 +1,7 @@
 import React from 'react';
+import {DropdownButton, Dropdown, ButtonToolbar } from 'react-bootstrap';
 
-class PlayButton extends React.Component {
+class UserButton extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -8,13 +9,15 @@ class PlayButton extends React.Component {
     render() {
         return (
             <div>
-                <button>
-                    SEE CURRENT USERS
-                </button>
+                <ButtonToolbar>
+                    <DropdownButton drop='up' variant='secondary' title='SEE CURRENT USERS' id='currentUsers' key='up'>
+                        <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+                    </DropdownButton>
+                </ButtonToolbar>
             </div>
         );
     }
 
 }
 
-export default PlayButton;
+export default UserButton;

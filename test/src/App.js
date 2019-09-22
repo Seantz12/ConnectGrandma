@@ -3,6 +3,8 @@ import ConnectionCounter from './components/ConnectionCounter.jsx'
 import PlayButton from './components/PlayButton.jsx'
 import UserButton from './components/UserButton.jsx'
 import PubNubReact from 'pubnub-react'
+import $ from 'jquery';
+import Popper from 'popper.js';
 import './App.css';
 
 
