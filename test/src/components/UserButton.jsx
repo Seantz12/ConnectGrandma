@@ -9,13 +9,13 @@ class UserButton extends React.Component {
 
     render() {
         return (
-            <div style={{position: 'absolute', bottom: '30px', right: '30px'}} >
+            <div style={{position: 'absolute', bottom: '30px', right: '-975px'}} >
                 {/* <ButtonToolbar>
                     <DropdownButton drop='up' variant='secondary' title='SEE CURRENT USERS' id='currentUsers' key='up'>
                         <Dropdown.Item eventKey="1">Action</Dropdown.Item>
                     </DropdownButton>
                 </ButtonToolbar> */}
-                <div class="dropdown">
+                <div class="dropleft">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                     <img src={UserGroup} height='50px' width='50px' />
                     <span class="caret"></span>

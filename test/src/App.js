@@ -87,17 +87,17 @@ class App extends React.Component {
     console.log(this.pubnub.getMessage('Connect'));
     return (
       <div className="App">
-        <svg hidden={this.state.rectHidden} onClick={this.imageHide} width="1920" height="1080">
-          <rect width="1920" height="3000" />
+        <svg hidden={this.state.rectHidden} onClick={this.imageHide} width="2110" height="1080" style={{overflow:'hidden'}}>
+          <rect width="2200" height="3000" />
         </svg>
-        <div className="container" stype={{position:'relative'}}>
+        <div className="container" style={{position:'relative', padding:'0px', margin:'0px'}}>
           <ReactPlayer 
             className="Video"
             id='youtube-player'
-            height='800px'
-            width='2000px'
+            height='1035px'
+            width='2020px'
             playing={this.state.playing}
-            url='https://www.youtube.com/watch?v=WJq4jWSQNd8/'
+            url='https://www.youtube.com/watch?v=CH1bHOiVuH4/'
             controls={false}
           />
           <PlayButton hidden={this.state.playHidden} className="PlayButton"  PlayYoutube={this.PlayYoutube}/>

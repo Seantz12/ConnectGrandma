@@ -11,7 +11,7 @@ class PlayButton extends React.Component {
 
     render() {
         return (
-            <div style={{position:"absolute", top:"40%", left:"57%"}} hidden={this.props.hidden}>
+            <div style={{position:"absolute", top:"40%", left:"80%"}} hidden={this.props.hidden}>
                 <img src={Play} height='200px' width='200px' onClick={this.props.PlayYoutube}/>
             </div>
         );
