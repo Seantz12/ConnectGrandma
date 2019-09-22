@@ -29,7 +29,10 @@ class App extends React.Component {
 
   playVideo() {
     console.log('test')
-    this.setState((state) => state.playing = true);
+    this.setState((state) => {
+      state.playing = true;
+      state.imageHide = true;
+    });
   }
 
   componentDidMount() {
@@ -83,7 +86,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <svg hidden={this.state.rectHidden} onClick={this.imageHide} width="1920" height="1080">
-          <rect width="1920" height="1080" />
+          <rect width="1920" height="3000" />
         </svg>
         <ReactPlayer 
           id='youtube-player'
