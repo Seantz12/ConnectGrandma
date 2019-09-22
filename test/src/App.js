@@ -32,7 +32,7 @@ class App extends React.Component {
     console.log('test')
     this.setState({
       playing: true,
-      imageHide: true,
+      rectHidden: true,
       playHidden: true
     });
   }
