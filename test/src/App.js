@@ -60,16 +60,17 @@ class App extends React.Component {
     console.log(this.pubnub.getMessage('Connect'));
     return (
       <div className="App">
-        <ReactPlayer 
-          id='youtube-player'
-          playing={this.state.playing}
-          height={500}
-          width={1000}
-          url='https://www.youtube.com/watch?v=WJq4jWSQNd8/'
-          controls={false}
-        />
-        <PlayButton PlayYoutube={this.PlayYoutube}/>
-        <UserButton/>
+        <div class="container">
+          <ReactPlayer 
+            class='Video'
+            id='youtube-player'
+            playing={this.state.playing}
+            url='https://www.youtube.com/watch?v=WJq4jWSQNd8/'
+            controls={false}
+          />
+          <PlayButton class='PlayButton' PlayYoutube={this.PlayYoutube}/>
+          <UserButton class='UserButton'/>
+        </div>
       </div>
     );
   }
