@@ -1,5 +1,4 @@
 import React from 'react';
-import ConnectionCounter from './components/ConnectionCounter.jsx'
 import PlayButton from './components/PlayButton.jsx'
 import PubNubReact from 'pubnub-react'
 import ReactPlayer from 'react-player'
@@ -16,28 +15,39 @@ class App extends React.Component {
     });
     this.pubnub.init(this)
     this.PlayYoutube = this.PlayYoutube.bind(this);
+    this.playVideo = this.playVideo.bind(this);
+  }
+
+  playVideo() {
+    this.setState((state) => state.playing = true);
   }
 
   componentDidMount() {
+    console.log('hello')
     this.pubnub.subscribe({
-      channel: 'Connect',
+      channels: ['Channel-s1dzpkkm1'],
       restore: true,
       message: (message) => {
         console.log(message)
+        console.log('recieved!!')
         this.setState((state) => state.numOfConnections++);
         if(message == "newConnection") {
           console.log('subscribed?');
         }
       }
     });
+    this.pubnub.addListener({ message: function (message) {
+      // this.playVideo();
+      console.log(message);
+      console.log(message.message);
+    }});
   }
 
   PlayYoutube() {
     console.log("bitch")
-    this.setState((state) => state.playing = true);
     console.log(this.pubnub)
     this.pubnub.publish({
-      channel:'Connect',
+      channel:'Channel-s1dzpkkm1',
       message: 'newConnection'
     })
   }
