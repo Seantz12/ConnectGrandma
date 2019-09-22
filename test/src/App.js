@@ -32,7 +32,8 @@ class App extends React.Component {
     console.log('test')
     this.setState({
       playing: true,
-      imageHide: true
+      imageHide: true,
+      playHidden: true
     });
   }
 
@@ -93,14 +94,13 @@ class App extends React.Component {
           <ReactPlayer 
             className="Video"
             id='youtube-player'
-            height='1500'
-            width='2000'
-            left='0%'
+            height='800px'
+            width='2000px'
             playing={this.state.playing}
             url='https://www.youtube.com/watch?v=WJq4jWSQNd8/'
             controls={false}
           />
-          <PlayButton className="PlayButton"  PlayYoutube={this.PlayYoutube}/>
+          <PlayButton hidden={this.state.playHidden} className="PlayButton"  PlayYoutube={this.PlayYoutube}/>
           <UserButton className="UserButton"/>
         </div>
       </div>
